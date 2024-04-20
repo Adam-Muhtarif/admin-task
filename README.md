@@ -16,7 +16,7 @@ But if you want, you can do [Prisma](https://docs.nestjs.com/recipes/prisma#set-
 There is no need for deploying this project. Forking and showing the code would suffice.
 
 
-## Extra Notifying Users About the Post
+## Bonus: Notifying Users About the Post
 You can potentially add a notification system. Whenever a user has been created, the backend system would send a notification.
 Use [Queue](https://docs.bullmq.io/)
 
