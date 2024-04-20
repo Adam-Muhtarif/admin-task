@@ -1,4 +1,3 @@
-# admin-task
 ## Tools
 - [Nestjs](https://docs.nestjs.com/)
 - [Refine](https://refine.dev/)
