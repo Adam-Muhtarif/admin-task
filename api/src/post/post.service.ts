@@ -10,22 +10,28 @@ export class PostService {
   async create(createPostInput: CreatePostInput) {
     return await this.prisma.post.create({
       data: { ...createPostInput },
+      include: { category: true },
     });
   }
 
   async findAll() {
-    return await this.prisma.post.findMany({});
+    return await this.prisma.post.findMany({
+      include: { category: true },
+      orderBy: { createdAt: 'desc' },
+    });
   }
 
   async findByCategory(id: number) {
     return await this.prisma.post.findMany({
       where: { categoryId: id },
+      include: { category: true },
     });
   }
 
   async findOne(id: number) {
     return await this.prisma.post.findFirst({
       where: { id: id },
+      include: { category: true },
     });
   }
 
@@ -33,6 +39,7 @@ export class PostService {
     return await this.prisma.post.update({
       where: { id: id },
       data: { ...updatePostInput },
+      include: { category: true },
     });
   }
 

@@ -11,4 +11,10 @@ export class CategoryType {
 
   @Field(() => [PostType])
   posts?: PostType[];
+
+  @Field()
+  createdAt: string;
+
+  @Field()
+  updatedAt: string;
 }

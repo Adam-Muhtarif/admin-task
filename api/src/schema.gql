@@ -3,9 +3,11 @@
 # ------------------------------------------------------
 
 type Category {
+  createdAt: String!
   id: Int!
   name: String!
   posts: [Post!]!
+  updatedAt: String!
 }
 
 input CreateCategoryInput {
@@ -22,16 +24,19 @@ type Mutation {
   createCategory(createCategoryInput: CreateCategoryInput!): Category!
   createPost(createPostInput: CreatePostInput!): Post!
   removeCategory(id: Int!): Category!
-  removePost(id: Int!): Post!
+  removePost(id: Int!): Post
   updateCategory(updateCategoryInput: UpdateCategoryInput!): Category!
   updatePost(updatePostInput: UpdatePostInput!): Post!
 }
 
 type Post {
+  category: Category!
   categoryId: Int!
   content: String!
+  createdAt: String!
   id: Int!
   title: String!
+  updatedAt: String!
 }
 
 type Query {

@@ -33,7 +33,7 @@ export class PostResolver {
     return this.postService.update(+updatePostInput.id, updatePostInput);
   }
 
-  @Mutation(() => PostType)
+  @Mutation(() => PostType, { nullable: true })
   removePost(@Args('id', { type: () => Int }) id: number) {
     return this.postService.remove(+id);
   }
